@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentFormTests implements HelperStudent {
+public class StudentFormTests extends TestBase implements HelperStudent {
 
     @BeforeMethod
     public void preconditions(){
-        init();
+
         selectForms();
         selectPracticeForm();
     }
@@ -31,7 +31,7 @@ public class StudentFormTests implements HelperStudent {
                 .email("jjbbbb@tteeest.com")
                 .gender(Gender.MALE)
                 .phone("12345677777")
-                .birthday("01 01 2011")
+                .birthday("4 01 1934")
                 .subjects("Maths,Physics")
                 .hobby(hobby)
                 .address("Street, 10")
@@ -39,6 +39,8 @@ public class StudentFormTests implements HelperStudent {
                 .city("Delhi")
                 .build();
 
+        hideFooter();
+        hideDiv();
         fillForm(studentDTO);
         submit();
 
